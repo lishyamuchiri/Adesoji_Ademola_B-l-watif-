@@ -1,0 +1,1816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adesoji Ademola Bólúwatifé - Creative Portfolio</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <!-- Typed.js for Animated Typing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Portfolio of Adesoji Ademola Bólúwatifé, Creative Director specializing in art, filmmaking, and photography.">
+    <meta name="keywords" content="Adesoji Boluwatife, creative director, artist, filmmaker, photographer, Nigeria">
+    <meta name="author" content="Adesoji Ademola Bólúwatifé">
+    <style>
+        :root {
+            --accent-light: #007bff;
+            --accent-dark: #66b2ff;
+            --bg-light: #ffffff;
+            --bg-dark: #1a1a1a;
+            --text-light: #f5f5f5;
+            --text-dark: #111111;
+            --card-bg-light: #f9f9f9;
+            --card-bg-dark: #2c2c2c;
+            --navbar-bg-light: rgba(255, 255, 255, 0.95);
+            --navbar-bg-dark: rgba(26, 26, 26, 0.95);
+            --button-bg-light: #007bff;
+            --button-bg-dark: #66b2ff;
+            --button-text-light: #ffffff;
+            --button-text-dark: #111111;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--bg-light);
+            color: var(--text-dark);
+            transition: background-color 0.4s ease, color 0.4s ease;
+            scroll-behavior: smooth;
+            margin: 0;
+        }
+
+        body.dark-mode {
+            background: var(--bg-dark);
+            color: var(--text-light);
+        }
+
+        .navbar {
+            background: var(--navbar-bg-light);
+            backdrop-filter: blur(10px);
+            transition: background-color 0.4s ease;
+            padding: 1rem 0;
+        }
+
+        body.dark-mode .navbar {
+            background: var(--navbar-bg-dark);
+        }
+
+        .navbar-nav .nav-link {
+            color: var(--text-dark);
+            transition: color 0.4s ease;
+            position: relative;
+        }
+
+        body.dark-mode .navbar-nav .nav-link {
+            color: var(--text-light);
+        }
+
+        .navbar-nav .nav-link.active {
+            color: var(--accent-light) !important;
+        }
+
+        body.dark-mode .navbar-nav .nav-link.active {
+            color: var(--accent-dark) !important;
+        }
+
+        .navbar-nav .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: var(--accent-light);
+            transition: width 0.3s ease;
+        }
+
+        body.dark-mode .navbar-nav .nav-link::after {
+            background: var(--accent-dark);
+        }
+
+        .navbar-nav .nav-link:hover::after,
+        .navbar-nav .nav-link.active::after {
+            width: 100%;
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, var(--accent-light), #4b0082);
+            color: var(--text-light);
+            position: relative;
+            overflow: hidden;
+            transition: background 0.4s ease;
+        }
+
+        body.dark-mode .hero {
+            background: linear-gradient(135deg, var(--accent-dark), #4b0082);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://source.unsplash.com/random/1920x1080?art') no-repeat center center/cover;
+            opacity: 0.3;
+            z-index: 0;
+        }
+
+        .hero-content {
+            z-index: 1;
+        }
+
+        .typed-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        .profile-img {
+    border-radius: 50%;
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    border: 5px solid var(--accent-light);
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.4s ease;
+}
+
+        body.dark-mode .profile-img {
+            border-color: var(--accent-dark);
+        }
+
+        .profile-img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(0, 123, 255, 0.5);
+        }
+
+        body.dark-mode .profile-img:hover {
+            box-shadow: 0 0 20px rgba(102, 178, 255, 0.5);
+        }
+
+        .logo-animation {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        .section-title {
+            position: relative;
+            display: block; /* Changed to block for proper centering */
+            text-align: center; /* Ensure text is centered */
+            margin: 0 auto 2rem; /* Centered with margin */
+            font-family: 'Playfair Display', serif;
+            transition: color 0.4s ease;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%; /* Center the underline */
+            transform: translateX(-50%); /* Adjust for centering */
+            width: 60px;
+            height: 4px;
+            background: var(--accent-light);
+            transition: background-color 0.4s ease;
+        }
+
+        body.dark-mode .section-title::after {
+            background: var(--accent-dark);
+        }
+
+        .skill-card, .card, .blog-card {
+            background: var(--card-bg-light);
+            border-radius: 15px;
+            transition: background-color 0.4s ease, transform 0.3s, box-shadow 0.3s, color 0.4s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        body.dark-mode .skill-card, body.dark-mode .card, body.dark-mode .blog-card {
+            background: var(--card-bg-dark) !important;
+            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+            color: var(--text-light) !important;
+        }
+
+        body.dark-mode .card-body, body.dark-mode .card-title, body.dark-mode .card-text {
+            color: var(--text-light) !important;
+        }
+
+        .skill-card:hover, .project-card:hover, .blog-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        body.dark-mode .skill-card:hover, body.dark-mode .project-card:hover, body.dark-mode .blog-card:hover {
+            box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
+        }
+
+        .project-card {
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .project-card img {
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+
+        .project-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .contact-form {
+            background: var(--card-bg-light);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        body.dark-mode .contact-form {
+            background: var(--card-bg-dark);
+            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+        }
+
+        .btn-primary {
+            background: var(--button-bg-light);
+            border-color: var(--button-bg-light);
+            color: var(--button-text-light);
+            transition: background-color 0.4s ease, border-color 0.4s ease, color 0.4s ease;
+        }
+
+        body.dark-mode .btn-primary {
+            background: var(--button-bg-dark);
+            border-color: var(--button-bg-dark);
+            color: var(--button-text-dark);
+        }
+
+        .btn-outline-primary {
+            border-color: var(--button-bg-light);
+            color: var(--button-bg-light);
+            transition: border-color 0.4s ease, color 0.4s ease;
+        }
+
+        body.dark-mode .btn-outline-primary {
+            border-color: var(--button-bg-dark);
+            color: var(--button-bg-dark);
+        }
+
+        .theme-toggle {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            z-index: 2000;
+            background: var(--accent-light);
+            color: var(--text-light);
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex !important;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid var(--text-light);
+            cursor: pointer;
+            transition: background-color 0.4s ease, transform 0.3s, box-shadow 0.4s ease;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .theme-toggle:hover {
+            transform: scale(1.1);
+        }
+
+        body.dark-mode .theme-toggle {
+            background: var(--accent-dark);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+            animation: glow 1.5s ease-in-out infinite alternate;
+            border-color: var(--text-light);
+        }
+
+        @keyframes glow {
+            0% {
+                box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+            }
+            100% {
+                box-shadow: 0 0 25px rgba(255, 255, 255, 1);
+            }
+        }
+
+        .theme-toggle i {
+            font-size: 1.5rem;
+            transition: transform 0.4s ease, color 0.4s ease;
+        }
+
+        .theme-toggle.active i {
+            transform: rotate(180deg);
+        }
+
+        body.dark-mode .theme-toggle i {
+            color: var(--text-light);
+        }
+
+        .progress-bar {
+            height: 12px;
+            border-radius: 6px;
+            background: var(--accent-light);
+            transition: background-color 0.4s ease;
+        }
+
+        body.dark-mode .progress-bar {
+            background: var(--accent-dark);
+        }
+
+        .blog-card {
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        footer {
+            background: var(--text-dark);
+            color: var(--text-light);
+            transition: background-color 0.4s ease;
+        }
+
+        body.dark-mode footer {
+            background: #0f0f0f;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-overlay a {
+            color: var(--accent-light);
+            font-size: 1.5rem;
+            transition: color 0.4s ease;
+        }
+
+        body.dark-mode .gallery-overlay a {
+            color: var(--accent-dark);
+        }
+
+        .bg-light {
+            background: var(--bg-light) !important;
+            transition: background-color 0.4s ease;
+        }
+
+        body.dark-mode .bg-light {
+            background: var(--bg-dark) !important;
+        }
+
+        /* Modal Styling */
+        .modal-content {
+            background: var(--card-bg-light);
+            transition: background-color 0.4s ease;
+        }
+
+        body.dark-mode .modal-content {
+            background: var(--card-bg-dark);
+        }
+
+        .modal-body img {
+            max-width: 100%;
+            max-height: 60vh;
+            object-fit: contain;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+
+        .modal-title {
+            color: var(--text-dark);
+            transition: color 0.4s ease;
+        }
+
+        body.dark-mode .modal-title {
+            color: var(--text-light);
+        }
+
+        .modal-body p {
+            color: var(--text-dark);
+            transition: color 0.4s ease;
+        }
+
+        body.dark-mode .modal-body p {
+            color: var(--text-light);
+        }
+
+        /* Testimonials Section Styling */
+        #testimonials .subtitle {
+            font-size: 1rem; /* Adjusted for consistency */
+            color: var(--text-dark);
+            opacity: 0.7;
+            margin-bottom: 2rem;
+            transition: color 0.4s ease;
+            text-align: center; /* Ensure centering */
+        }
+
+        body.dark-mode #testimonials .subtitle {
+            color: var(--text-light);
+        }
+
+        .testimonial-item {
+            text-align: center;
+            padding: 2rem;
+        }
+
+         .testimonial-item img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+            object-fit: cover;
+        }
+
+        .testimonial-item h5 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+            transition: color 0.4s ease;
+        }
+
+         body.dark-mode .testimonial-item h5 {
+            color: var(--text-light);
+        } 
+
+        .testimonial-item .title {
+            font-size: 0.9rem;
+            color: var(--text-dark);
+            opacity: 0.7;
+            margin-bottom: 0.5rem;
+            transition: color 0.4s ease;
+        } */
+
+        body.dark-mode .testimonial-item .title {
+            color: var(--text-light);
+        }
+
+        .testimonial-item .stars {
+            color: #ffc107;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-item .quote {
+            font-size: 1.1rem;
+            font-style: italic;
+            color: var(--text-dark);
+            position: relative;
+            padding: 0 2rem;
+            transition: color 0.4s ease;
+        }
+
+        body.dark-mode .testimonial-item .quote {
+            color: var(--text-light);
+        }
+
+        .testimonial-item .quote::before,
+        .testimonial-item .quote::after {
+            content: '"';
+            font-size: 2rem;
+            color: var(--accent-light);
+            position: absolute;
+            transition: color 0.4s ease;
+        }
+
+        body.dark-mode .testimonial-item .quote::before,
+        body.dark-mode .testimonial-item .quote::after {
+            color: var(--accent-dark);
+        }
+
+        .testimonial-item .quote::before {
+            top: -0.5rem;
+            left: 0;
+        }
+
+        .testimonial-item .quote::after {
+            bottom: -1.5rem;
+            right: 0;
+        } */
+
+       /* Right-to-Left Carousel Animation */
+.carousel-inner {
+    overflow: hidden;
+}
+
+.carousel-item {
+    transition: transform 0.3s ease-in-out;
+}
+
+.carousel-item-next.carousel-item-left,
+.carousel-item-prev.carousel-item-right {
+    transform: translateX(0);
+}
+
+.carousel-item-next,
+.active.carousel-item-right {
+    transform: translateX(100%);
+}
+
+.carousel-item-prev,
+.active.carousel-item-left {
+    transform: translateX(-100%);
+}
+
+/* Experience Timeline */
+.exp-timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    padding-left: 50px;
+}
+
+.exp-timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 25px;
+    height: 100%;
+    width: 2px;
+    background: linear-gradient(to bottom, 
+        transparent 0%, 
+        var(--accent-light) 20%, 
+        var(--accent-light) 80%, 
+        transparent 100%);
+    z-index: 1;
+}
+
+body.dark-mode .exp-timeline::before {
+    background: linear-gradient(to bottom, 
+        transparent 0%, 
+        var(--accent-dark) 20%, 
+        var(--accent-dark) 80%, 
+        transparent 100%);
+}
+
+.exp-item {
+    position: relative;
+    margin-bottom: 40px;
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+
+.exp-badge {
+    position: absolute;
+    left: 18px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--accent-light);
+    border: 4px solid var(--bg-light);
+    z-index: 2;
+    transform: translateX(-50%);
+    transition: all 0.3s ease;
+}
+
+body.dark-mode .exp-badge {
+    background: var(--accent-dark);
+    border-color: var(--bg-dark);
+}
+
+.exp-card {
+    position: relative;
+    background: var(--card-bg-light);
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    margin-left: 30px;
+}
+
+body.dark-mode .exp-card {
+    background: var(--card-bg-dark);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.exp-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.exp-card:hover .exp-badge {
+    transform: translateX(-50%) scale(1.2);
+}
+
+.exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.exp-header h4 {
+    color: var(--text-dark);
+    margin: 0;
+    font-weight: 600;
+}
+
+body.dark-mode .exp-header h4 {
+    color: var(--text-light);
+}
+
+.exp-period {
+    background: var(--accent-light);
+    color: white;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+body.dark-mode .exp-period {
+    background: var(--accent-dark);
+}
+
+.exp-company {
+    color: var(--text-dark);
+    opacity: 0.9;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+body.dark-mode .exp-company {
+    color: var(--text-light);
+}
+
+.exp-company i {
+    color: var(--accent-light);
+    font-size: 0.9rem;
+}
+
+body.dark-mode .exp-company i {
+    color: var(--accent-dark);
+}
+
+.exp-details {
+    padding-left: 20px;
+    margin: 0;
+}
+
+.exp-details li {
+    color: var(--text-dark);
+    margin-bottom: 8px;
+    position: relative;
+    list-style-type: none;
+}
+
+body.dark-mode .exp-details li {
+    color: var(--text-light);
+}
+
+.exp-details li i {
+    position: absolute;
+    left: -18px;
+    top: 8px;
+    font-size: 8px;
+    color: var(--accent-light);
+}
+
+body.dark-mode .exp-details li i {
+    color: var(--accent-dark);
+}
+
+.exp-connector {
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, var(--accent-light), transparent 70%);
+}
+
+body.dark-mode .exp-connector {
+    background: linear-gradient(90deg, var(--accent-dark), transparent 70%);
+}
+
+/* Animations */
+.animate__fadeInLeft {
+    animation-name: fadeInLeft;
+}
+
+.animate__fadeInRight {
+    animation-name: fadeInRight;
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Timeline Styles */
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding-left: 50px;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 30px;
+    height: 100%;
+    width: 4px;
+    background: var(--accent-light);
+    z-index: 1;
+}
+
+body.dark-mode .timeline::before {
+    background: var(--accent-dark);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 40px;
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+
+.timeline-badge {
+    position: absolute;
+    left: 18px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--accent-light);
+    z-index: 2;
+    transform: translateX(-50%);
+}
+
+body.dark-mode .timeline-badge {
+    background: var(--accent-dark);
+}
+
+.pulse-animation {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: translateX(-50%) scale(1); box-shadow: 0 0 0 0 rgba(var(--accent-light-rgb), 0.7); }
+    70% { transform: translateX(-50%) scale(1.05); box-shadow: 0 0 0 10px rgba(var(--accent-light-rgb), 0); }
+    100% { transform: translateX(-50%) scale(1); box-shadow: 0 0 0 0 rgba(var(--accent-light-rgb), 0); }
+}
+
+body.dark-mode .pulse-animation {
+    animation-name: pulse-dark;
+}
+
+@keyframes pulse-dark {
+    0% { transform: translateX(-50%) scale(1); box-shadow: 0 0 0 0 rgba(var(--accent-dark-rgb), 0.7); }
+    70% { transform: translateX(-50%) scale(1.05); box-shadow: 0 0 0 10px rgba(var(--accent-dark-rgb), 0); }
+    100% { transform: translateX(-50%) scale(1); box-shadow: 0 0 0 0 rgba(var(--accent-dark-rgb), 0); }
+}
+
+.timeline-card {
+    position: relative;
+    background: var(--card-bg-light);
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+body.dark-mode .timeline-card {
+    background: var(--card-bg-dark);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.timeline-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.timeline-content h4 {
+    color: var(--text-dark);
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+body.dark-mode .timeline-content h4 {
+    color: var(--text-light);
+}
+
+.timeline-meta {
+    color: var(--text-dark);
+    opacity: 0.8;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+body.dark-mode .timeline-meta {
+    color: var(--text-light);
+}
+
+.timeline-meta i {
+    color: var(--accent-light);
+}
+
+body.dark-mode .timeline-meta i {
+    color: var(--accent-dark);
+}
+
+.timeline-desc {
+    color: var(--text-dark);
+    opacity: 0.9;
+    line-height: 1.6;
+}
+
+body.dark-mode .timeline-desc {
+    color: var(--text-light);
+}
+
+.timeline-line {
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent-light), transparent);
+}
+
+body.dark-mode .timeline-line {
+    background: linear-gradient(90deg, var(--accent-dark), transparent);
+}
+
+
+ /* Portfolio Navigation Styling */
+ .portfolio-nav {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .portfolio-nav a {
+            color: var(--text-dark);
+            font-size: 1rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            transition: color 0.3s ease, background-color 0.3s ease;
+        }
+
+        body.dark-mode .portfolio-nav a {
+            color: var(--text-light);
+        }
+
+        .portfolio-nav a:hover,
+        .portfolio-nav a.active {
+            color: var(--text-light);
+            background-color: var(--accent-light);
+        }
+
+        body.dark-mode .portfolio-nav a:hover,
+        body.dark-mode .portfolio-nav a.active {
+            background-color: var(--accent-dark);
+        }
+
+        /* Portfolio Items Filtering */
+        .gallery-item {
+            display: block;
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .gallery-item.hidden {
+            display: none;
+            opacity: 0;
+            transform: scale(0.95);
+        }
+
+
+/* Animation */
+.animate__animated {
+    animation-duration: 1s;
+}
+
+.animate__fadeInUp {
+    animation-name: fadeInUp;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.footer {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    font-family: 'Inter', sans-serif;
+    transition: background-color 0.4s ease;
+}
+
+body.dark-mode .footer {
+    background-color: #111;
+}
+
+.footer-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--text-light);
+}
+
+.footer-title {
+    opacity: 0.8;
+    font-size: 1rem;
+}
+
+.footer-nav {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1.5rem;
+}
+
+.footer-link {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.footer-link:hover {
+    color: var(--accent-light);
+}
+
+body.dark-mode .footer-link:hover {
+    color: var(--accent-dark);
+}
+
+.footer-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background: var(--accent-light);
+    transition: width 0.3s ease;
+}
+
+body.dark-mode .footer-link::after {
+    background: var(--accent-dark);
+}
+
+.footer-link:hover::after {
+    width: 100%;
+}
+
+.copyright {
+    opacity: 0.7;
+    font-size: 0.9rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-icon {
+    color: var(--text-light);
+    font-size: 1.2rem;
+    transition: transform 0.3s ease, color 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.1);
+}
+
+.social-icon:hover {
+    color: var(--accent-light);
+    transform: translateY(-3px);
+    background: rgba(255,255,255,0.2);
+}
+
+body.dark-mode .social-icon:hover {
+    color: var(--accent-dark);
+}
+
+@media (max-width: 768px) {
+    .footer-nav {
+        justify-content: center;
+        margin-bottom: 1.5rem;
+    }
+    
+    .footer-name, .footer-title, .copyright {
+        text-align: center;
+    }
+    
+    .social-links {
+        justify-content: center;
+    }
+}
+
+        @media (max-width: 768px) {
+            .hero {
+                text-align: center;
+            }
+
+
+
+            .profile-img {
+        width: 350px; /* Slightly smaller for mobile */
+        height: 350px; /* Maintain square aspect ratio */
+        border-radius: 15px; /* Square with slight rounding */
+    }
+
+
+/* Optional: Add border with dark mode support */
+.profile-img {
+    border: 5px solid var(--accent-light);
+}
+
+body.dark-mode .profile-img {
+    border-color: var(--accent-dark);
+}
+
+            .typed-text {
+                font-size: 1.5rem;
+            }
+
+            .theme-toggle {
+                width: 50px;
+                height: 50px;
+                top: 20px;
+                right: 20px;
+            }
+
+            .testimonial-item .quote {
+                font-size: 1rem;
+                padding: 0 1rem;
+            }
+
+            .section-title::after {
+                width: 40px; /* Slightly smaller underline on mobile */
+            }
+
+            .portfolio-nav {
+                flex-direction: column;
+                align-items: center;
+                gap: 0.5rem;
+            }
+
+            .portfolio-nav a {
+                font-size: 0.9rem;
+                padding: 0.4rem 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Theme Toggle Button -->
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle between dark and light mode">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home">
+                <!-- <img src="https://via.placeholder.com/50" alt="House of Art Logo" class="logo-animation" width="50"> -->
+                <!-- Adesoji Bólúwatifé -->
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container hero-content">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1>Adesoji Ademola Bólúwatifé</h1>
+                    <h3>Creative Director & Visual Storyteller</h3>
+                    <p class="typed-text">I create <span id="typed"></span></p>
+                    <a href="#portfolio" class="btn btn-primary mt-3">Experience My Art</a>
+                    <a href="#contact" class="btn btn-outline-primary mt-3 ms-2">Get in Touch</a>
+                </div>
+               <br><br> 
+                <div class="col-lg-6 text-center">
+                    <img src="static/images/profile.PNG" alt="Adesoji Profile" class="profile-img" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="row">
+                <div class="col-lg-8">
+                    <p>I'm Adesoji Ademola Bólúwatifé, a creative force with over 6 years in the art world, specializing in design, filmmaking, and photography. My mission is to craft visual stories that captivate and inspire. Experience my form of art and tell the world about it—that’s all there is to know about me!</p>
+                    <p>Outside the studio, I’m a team builder with great communication skills, though I’ll admit I can be quick to give up when the vibe isn’t right. I love vibing to music (ohh chim!) and exploring new creative challenges.</p>
+                    <a href="static/images/Bolu's_CV.pdf" class="btn btn-primary mt-3" download>Download CV</a>
+                    
+                </div>
+                
+                <div class="col-lg-4 text-center">
+                    <img src="https://images.pexels.com/photos/4549411/pexels-photo-4549411.jpeg?auto=compress&cs=tinysrgb&w=600" alt="About Image" class="img-fluid rounded" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title">Skills & Expertise</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="skill-card p-4 shadow">
+                        <h4>Creative Arts</h4>
+                        <p><i class="fas fa-paint-brush"></i> Graphic Design</p>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 90%"></div>
+                        </div>
+                        <p><i class="fas fa-camera"></i> Photography</p>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 85%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="skill-card p-4 shadow">
+                        <h4>Filmmaking</h4>
+                        <p><i class="fas fa-video"></i> Video Editing</p>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 80%"></div>
+                        </div>
+                        <p><i class="fas fa-film"></i> Cinematography</p>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 75%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="skill-card p-4 shadow">
+                        <h4>Soft Skills</h4>
+                        <p><i class="fas fa-users"></i> Team Building</p>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 85%"></div>
+                        </div>
+                        <p><i class="fas fa-comments"></i> Communication</p>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 90%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-5">
+        <div class="container">
+            <h2 class="section-title">Portfolio</h2>
+            <!-- Portfolio Navigation -->
+            <div class="portfolio-nav">
+                <a href="#" class="active" data-filter="all">All</a>
+                <a href="#" data-filter="art">Art</a>
+                <a href="#" data-filter="design-portfolio">Design Portfolio</a>
+                <a href="#" data-filter="music-cover">Music Cover</a>
+                <a href="#" data-filter="photoshoot">Photoshoot</a>
+                <a href="#" data-filter="video-project">Video Project</a>
+            </div>
+            <!-- Portfolio Items -->
+            <div class="gallery-grid">
+                <!-- Art -->
+                <div class="gallery-item project-card" 
+                     data-category="art"
+                     data-bs-toggle="modal" 
+                     data-bs-target="#portfolioModal" 
+                     data-img="static/images/sample1.jpg" 
+                     data-title="Art Installation" 
+                     data-description="This art installation, titled 'Digital Echoes,' was created in 2022 as part of a city-wide art festival in Lagos. It combines LED lights, digital projections, and recycled materials to create an immersive experience that reflects on the intersection of technology and nature.">
+                    <img src="static/images/sample1.jpg" alt="Art Installation" loading="lazy">
+                    <div class="gallery-overlay">
+                        <a href="#" class="btn btn-outline-light">View Project</a>
+                    </div>
+                    <div class="p-3">
+                        <h5>Art Installation</h5>
+                        <p>A vibrant installation blending digital and physical art.</p>
+                        <p><strong>Tools:</strong> Photoshop, After Effects</p>
+                        <a href="#" class="btn btn-primary">Live Demo</a>
+                        <a href="#" class="btn btn-outline-primary ms-2">Source</a>
+                    </div>
+                </div>
+                <!-- Design Portfolio -->
+                <div class="gallery-item project-card" 
+                     data-category="design-portfolio"
+                     data-bs-toggle="modal" 
+                     data-bs-target="#portfolioModal" 
+                     data-img="static/images/sample2.jpg" 
+                     data-title="Brand Identity Design" 
+                     data-description="A complete brand identity design for a local startup in Lagos, including logo, business cards, and digital assets, created in 2023.">
+                    <img src="static/images/sample2.jpg" alt="Brand Identity Design" loading="lazy">
+                    <div class="gallery-overlay">
+                        <a href="#" class="btn btn-outline-light">View Project</a>
+                    </div>
+                    <div class="p-3">
+                        <h5>Brand Identity Design</h5>
+                        <p>Comprehensive branding for a startup.</p>
+                        <p><strong>Tools:</strong> Illustrator, Figma</p>
+                        <a href="#" class="btn btn-primary">Live Demo</a>
+                        <a href="#" class="btn btn-outline-primary ms-2">Source</a>
+                    </div>
+                </div>
+                <!-- Music Cover -->
+                <div class="gallery-item project-card" 
+                     data-category="music-cover"
+                     data-bs-toggle="modal" 
+                     data-bs-target="#portfolioModal" 
+                     data-img="static/images/sample4.jpg" 
+                     data-title="Album Cover Design" 
+                     data-description="Designed an album cover for a Nigerian artist in 2022, featuring vibrant colors and abstract art to reflect the music's energy.">
+                    <img src="static/images/sample4.jpg" alt="Album Cover Design" loading="lazy">
+                    <div class="gallery-overlay">
+                        <a href="#" class="btn btn-outline-light">View Project</a>
+                    </div>
+                    <div class="p-3">
+                        <h5>Album Cover Design</h5>
+                        <p>Eye-catching cover art for a music album.</p>
+                        <p><strong>Tools:</strong> Photoshop, Procreate</p>
+                        <a href="#" class="btn btn-primary">Live Demo</a>
+                        <a href="#" class="btn btn-outline-primary ms-2">Source</a>
+                    </div>
+                </div>
+                <!-- Photoshoot -->
+                <div class="gallery-item project-card" 
+                     data-category="photoshoot"
+                     data-bs-toggle="modal" 
+                     data-bs-target="#portfolioModal" 
+                     data-img="static/images/sample3.jpg" 
+                     data-title="Photography Series" 
+                     data-description="This series, 'Nigerian Vibrance,' was photographed in 2020 across various markets in Lagos. It captures the vivid colors and dynamic energy of Nigerian culture through portraits of vendors, artisans, and children. Each photo was edited to enhance natural lighting and textures.">
+                    <img src="static/images/sample3.jpg" alt="Photography Series" loading="lazy">
+                    <div class="gallery-overlay">
+                        <a href="#" class="btn btn-outline-light">View Project</a>
+                    </div>
+                    <div class="p-3">
+                        <h5>Photography Series</h5>
+                        <p>Capturing the essence of Nigerian culture.</p>
+                        <p><strong>Tools:</strong> Lightroom, Canon EOS</p>
+                        <a href="#" class="btn btn-primary">Live Demo</a>
+                        <a href="#" class="btn btn-outline-primary ms-2">Source</a>
+                    </div>
+                </div>
+                <!-- Video Project -->
+                <div class="gallery-item project-card" 
+                     data-category="video-project"
+                     data-bs-toggle="modal" 
+                     data-bs-target="#portfolioModal" 
+                     data-img="static/images/sample5.jpg" 
+                     data-title="Short Film" 
+                     data-description="Titled 'Urban Pulse,' this short film was shot in 2021 in the bustling streets of Ibadan. It tells the story of a young street vendor navigating daily challenges while chasing his dreams. The film uses a mix of handheld and drone shots to capture the city's energy.">
+                    <img src="static/images/sample5.jpg" alt="Short Film" loading="lazy">
+                    <div class="gallery-overlay">
+                        <a href="#" class="btn btn-outline-light">View Project</a>
+                    </div>
+                    <div class="p-3">
+                        <h5>Short Film</h5>
+                        <p>A cinematic story exploring urban life.</p>
+                        <p><strong>Tools:</strong> Premiere Pro, DaVinci Resolve</p>
+                        <a href="#" class="btn btn-primary">Live Demo</a>
+                        <a href="#" class="btn btn-outline-primary ms-2">Source</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Modal -->
+    <div class="modal fade" id="portfolioModal" tabindex="-1" aria-labelledby="portfolioModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="portfolioModalLabel">Project Title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <img src="" alt="Zoomed Project Image" id="modalImage">
+                    <p id="modalDescription">Project description goes here.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Education Section -->
+    <section id="education" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <h4>Diploma in Fine Arts</h4>
+                    <p><strong>Yaba College of Technology</strong> | 2018 - 2021</p>
+                    <p>Specialized in visual arts and digital design.</p>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <h4>Secondary Education</h4>
+                    <p><strong>Methodist Grammar School, Bodija, Ibadan</strong> | 2012 - 2018</p>
+                    <p>Graduated with a focus on creative arts.</p>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <h4>Primary Education</h4>
+                    <p><strong>Louisiana De Prince Academy, Kaduna</strong> | 2006 - 2012</p>
+                    <p>Early exposure to creative expression.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <!-- Education Section -->
+<section id="education" class="py-5 bg-light">
+    <div class="container">
+        <h2 class="section-title">Education</h2>
+        <div class="timeline">
+            <!-- Timeline Item 1 -->
+            <div class="timeline-item animate__animated animate__fadeInUp">
+                <div class="timeline-badge pulse-animation"></div>
+                <div class="timeline-card">
+                    <div class="timeline-content">
+                        <h4>Diploma in Fine Arts</h4>
+                        <p class="timeline-meta"><i class="fas fa-university"></i> <strong>Yaba College of Technology</strong> | 2018 - 2021</p>
+                        <p class="timeline-desc">Specialized in visual arts and digital design.</p>
+                        <div class="timeline-line"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Timeline Item 2 -->
+            <div class="timeline-item animate__animated animate__fadeInUp" style="--animation-delay: 0.2s">
+                <div class="timeline-badge pulse-animation" style="animation-delay: 0.2s"></div>
+                <div class="timeline-card">
+                    <div class="timeline-content">
+                        <h4>Secondary Education</h4>
+                        <p class="timeline-meta"><i class="fas fa-school"></i> <strong>Methodist Grammar School, Bodija, Ibadan</strong> | 2012 - 2018</p>
+                        <p class="timeline-desc">Graduated with a focus on creative arts.</p>
+                        <div class="timeline-line"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Timeline Item 3 -->
+            <div class="timeline-item animate__animated animate__fadeInUp" style="--animation-delay: 0.4s">
+                <div class="timeline-badge pulse-animation" style="animation-delay: 0.4s"></div>
+                <div class="timeline-card">
+                    <div class="timeline-content">
+                        <h4>Primary Education</h4>
+                        <p class="timeline-meta"><i class="fas fa-pencil-alt"></i> <strong>Louisiana De Prince Academy, Kaduna</strong> | 2006 - 2012</p>
+                        <p class="timeline-desc">Early exposure to creative expression.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Experience Section -->
+<section id="experience" class="py-5">
+    <div class="container">
+        <h2 class="section-title">Professional Journey</h2>
+        
+        <div class="exp-timeline">
+            <!-- Experience 1 -->
+            <div class="exp-item animate__animated animate__fadeInLeft">
+                <div class="exp-badge"></div>
+                <div class="exp-card">
+                    <div class="exp-header">
+                        <h4>Creative Director</h4>
+                        <span class="exp-period">2019 - Present</span>
+                    </div>
+                    <p class="exp-company"><i class="fas fa-building"></i> House of Art</p>
+                    <ul class="exp-details">
+                        <li><i class="fas fa-circle"></i> Led creative projects in design, film, and photography for 50+ clients</li>
+                        <li><i class="fas fa-circle"></i> Built a team of 10 artists, fostering collaboration and innovation</li>
+                    </ul>
+                    <div class="exp-connector"></div>
+                </div>
+            </div>
+            
+            <!-- Experience 2 -->
+            <div class="exp-item animate__animated animate__fadeInRight" style="--animation-delay: 0.2s">
+                <div class="exp-badge"></div>
+                <div class="exp-card">
+                    <div class="exp-header">
+                        <h4>Freelance Artist</h4>
+                        <span class="exp-period">2017 - 2019</span>
+                    </div>
+                    <p class="exp-company"><i class="fas fa-user-tie"></i> Self-Employed</p>
+                    <ul class="exp-details">
+                        <li><i class="fas fa-circle"></i> Created bespoke art and media for local/international clients</li>
+                        <li><i class="fas fa-circle"></i> Developed signature style that gained recognition in Nigeria</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+   <!-- Testimonials Section -->
+<section id="testimonials" class="py-5 bg-light">
+    <div class="container">
+        <h2 class="section-title text-center">What People Say</h2>
+        <p class="subtitle text-center">Hear from clients and collaborators about their experiences</p>
+        
+        <div id="testimonialsCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#testimonialsCarousel" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#testimonialsCarousel" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#testimonialsCarousel" data-bs-slide-to="2"></button>
+            </div>
+            
+            <div class="carousel-inner">
+                <!-- Testimonial 1 - Search for "professional african businesswoman portrait" -->
+                <div class="carousel-item active">
+                    <div class="testimonial-item">
+                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80" 
+                             alt="Amina Johnson" loading="lazy">
+                        <h5>Amina Johnson</h5>
+                        <p class="title">Marketing Director, Lagos</p>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p >"Adesoji transformed our brand identity with his exceptional design skills. His attention to detail and creative vision elevated our entire marketing campaign."</p>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 - Search for "nigerian entrepreneur portrait" -->
+                <div class="carousel-item">
+                    <div class="testimonial-item">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80" 
+                             alt="Chinedu Okeke" loading="lazy">
+                        <h5>Chinedu Okeke</h5>
+                        <p class="title">CEO, Tech Startup</p>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p >"The documentary film Adesoji created for our product launch captured our vision perfectly. His storytelling ability is remarkable."</p>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 - Search for "creative director portrait african" -->
+                <div class="carousel-item">
+                    <div class="testimonial-item">
+                        <img src="https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80" 
+                             alt="Zara Mohammed" loading="lazy">
+                        <h5>Zara Mohammed</h5>
+                        <p class="title">Art Gallery Curator</p>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p >"Adesoji's photography exhibition was the highlight of our season. His ability to capture raw emotion through the lens is extraordinary."</p>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="carousel-control-prev" type="button" data-bs-target="#testimonialsCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#testimonialsCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5">
+        <div class="container">
+            <h2 class="section-title">Get in Touch</h2>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="contact-form">
+                        <form id="contactForm">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Name</label>
+                                <input type="text" class="form-control" id="name" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Message</label>
+                                <textarea class="form-control" id="message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-envelope"></i> adesoji@houseofart.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Ibadan, Nigeria</p>
+                    <div class="social-links mt-3">
+                        <a href="#" class="btn btn-outline-primary me-2"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="btn btn-outline-primary me-2"><i class="fab fa-github"></i></a>
+                        <a href="#" class="btn btn-outline-primary"><i class="fab fa-instagram"></i></a>
+                    </div>
+                    <div class="mt-4">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.690!2d3.896614!3d7.387781!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x10398d6c08e6b7e7%3A0x1c5f0e9e8b6e6e2f!2sIbadan%2C%20Nigeria!5e0!3m2!1sen!2sng!4v1698765432109!5m2!1sen!2sng" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- Left side - Name and title -->
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <h3 class="footer-name">Adesoji Ademola Bólúwatifé</h3>
+                    <p class="footer-title">Creative Director & Visual Storyteller</p>
+                    <div class="social-links mt-3">
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://wa.me/yourphonenumber" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://tiktok.com/@yourusername" class="social-icon"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Right side - Navigation and copyright -->
+                <div class="col-md-6 text-md-end">
+                    <nav class="footer-nav mb-3">
+                        <a href="#home" class="footer-link">Home</a>
+                        <a href="#about" class="footer-link">About</a>
+                        <a href="#portfolio" class="footer-link">Portfolio</a>
+                        <a href="#contact" class="footer-link">Contact</a>
+                    </nav>
+                    <p class="copyright mb-0">© 2025 Adesoji Ademola Bólúwatifé. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+ <!-- Bootstrap JS and Popper.js -->
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+ <script>
+     // Theme Toggle with Local Storage
+     const themeToggle = document.getElementById('themeToggle');
+     const body = document.body;
+     const themeIcon = themeToggle.querySelector('i');
+
+     // Apply saved theme on load
+     if (localStorage.getItem('theme') === 'dark') {
+         body.classList.add('dark-mode');
+         themeIcon.classList.replace('fa-moon', 'fa-sun');
+         themeToggle.classList.add('active');
+     }
+
+     themeToggle.addEventListener('click', () => {
+         body.classList.toggle('dark-mode');
+         themeToggle.classList.toggle('active');
+         if (body.classList.contains('dark-mode')) {
+             themeIcon.classList.replace('fa-moon', 'fa-sun');
+             localStorage.setItem('theme', 'dark');
+         } else {
+             themeIcon.classList.replace('fa-sun', 'fa-moon');
+             localStorage.setItem('theme', 'light');
+         }
+     });
+
+     // Typed.js for Hero Section
+     const typed = new Typed('#typed', {
+         strings: ['Art', 'Films', 'Photography', 'Stories'],
+         typeSpeed: 50,
+         backSpeed: 30,
+         loop: true
+     });
+
+     // Smooth Scroll with Navbar Offset
+     document.querySelectorAll('.nav-link, .list-inline-item a').forEach(anchor => {
+         anchor.addEventListener('click', function(e) {
+             e.preventDefault();
+             const targetId = this.getAttribute('href').substring(1);
+             const targetElement = document.getElementById(targetId);
+             const navbarHeight = document.querySelector('.navbar').offsetHeight;
+             const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
+             window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+         });
+     });
+
+     // Active Link Highlighting
+     const sections = document.querySelectorAll('section');
+     const navLinks = document.querySelectorAll('.nav-link');
+
+     window.addEventListener('scroll', () => {
+         let current = '';
+         sections.forEach(section => {
+             const sectionTop = section.offsetTop - 100;
+             if (window.pageYOffset >= sectionTop) {
+                 current = section.getAttribute('id');
+             }
+         });
+
+         navLinks.forEach(link => {
+             link.classList.remove('active');
+             if (link.getAttribute('href').substring(1) === current) {
+                 link.classList.add('active');
+             }
+         });
+     });
+
+     // Contact Form Submission (Basic Example)
+     document.getElementById('contactForm').addEventListener('submit', function(e) {
+         e.preventDefault();
+         alert('Message sent to adesoji@houseofart.com! (This is a demo - integrate with a backend for full functionality.)');
+         this.reset();
+     });
+
+     // Keyboard Accessibility for Theme Toggle
+     themeToggle.addEventListener('keydown', (e) => {
+         if (e.key === 'Enter' || e.key === ' ') {
+             e.preventDefault();
+             themeToggle.click();
+         }
+     });
+
+     // Debug: Log to confirm theme toggle script is running
+     console.log('Theme toggle script loaded. Button visibility:', themeToggle.offsetParent !== null);
+
+     // Portfolio Modal Functionality
+     const portfolioModal = document.getElementById('portfolioModal');
+     portfolioModal.addEventListener('show.bs.modal', function (event) {
+         const projectCard = event.relatedTarget;
+         const imgSrc = projectCard.getAttribute('data-img');
+         const title = projectCard.getAttribute('data-title');
+         const description = projectCard.getAttribute('data-description');
+
+         const modalImage = portfolioModal.querySelector('#modalImage');
+         const modalTitle = portfolioModal.querySelector('#portfolioModalLabel');
+         const modalDescription = portfolioModal.querySelector('#modalDescription');
+
+         modalImage.src = imgSrc;
+         modalTitle.textContent = title;
+         modalDescription.textContent = description;
+     });
+
+
+     // Animation on scroll for timeline
+function animateOnScroll() {
+    const timelineItems = document.querySelectorAll('.timeline-item');
+    
+    timelineItems.forEach((item, index) => {
+        const itemTop = item.getBoundingClientRect().top;
+        const delay = index * 0.2;
+        
+        if (itemTop < window.innerHeight - 100) {
+            item.style.animationDelay = `${delay}s`;
+            item.style.opacity = '1';
+        }
+    });
+}
+
+
+// Experience section animation
+function animateExperience() {
+    const expItems = document.querySelectorAll('.exp-item');
+    
+    expItems.forEach((item, index) => {
+        const itemTop = item.getBoundingClientRect().top;
+        const delay = index * 0.2;
+        
+        if (itemTop < window.innerHeight - 100) {
+            item.style.animationDelay = `${delay}s`;
+            item.style.opacity = '1';
+        }
+    });
+}
+
+window.addEventListener('load', animateExperience);
+window.addEventListener('scroll', animateExperience);
+
+// Run on load and scroll
+window.addEventListener('load', animateOnScroll);
+window.addEventListener('scroll', animateOnScroll);
+
+      // Ensure carousel initializes properly
+      const testimonialsCarousel = document.getElementById('testimonialsCarousel');
+        if (testimonialsCarousel) {
+            new bootstrap.Carousel(testimonialsCarousel, {
+                ride: 'carousel',
+                interval: 5000
+            });
+        }
+ </script>
+</body>
+</html>
